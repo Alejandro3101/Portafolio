@@ -5,8 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alejandro Valderrama | Desarrollador </title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/primeflex@^3/primeflex.css">
+    <link rel="stylesheet" href="https://unpkg.com/primeflex/themes/saga-blue.css">
+    <script src="https://kit.fontawesome.com/b3f17f1dac.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <!--Header-->
+
+    <header class="flex w-full fixed top-0 z-1">
+        <nav class="flex justify-content-between w-full navbar">
+            <span class="logo cursor-pointer" onclick="scrollToSection('home')">
+                <img src="Img/logoIII.png" alt="Logo" width="50" height="50">
+            </span>
+            <input type="checkbox" aria-label="Agregar checkbox"
+                class="checkbox xl:hidden">
+            <div class="hamburger__lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <div class="header__info flex align-items-center gap-3">
+                <ul class="flex flex-column xl:flex-row list-none">
+                    <li onclick="scrollToSection('about')">Sobre mí</li>
+                    <li onclick="scrollToSection('services')">Servicios</li>
+                    <li onclick="scrollToSection('portfolio')">Portafolio</li>
+                    <li onclick="scrollToSection('contact')">Contacto</li>
+                </ul>
+                
+            </div>
+        </nav>
+    </header>
+
 </body>
 </html>

@@ -1,0 +1,68 @@
+/* --------GENERAL STYLES -------- */
+* {
+    margin: 0;
+    padding: 0;
+    scroll-padding-top: 4rem;
+}
+
+:root {
+    --bg-color: #000;
+    --font-color: #fff;
+    --secondary-bg-color: #00ddff;
+    --font: "Poppins";
+}
+body {
+    background-color: var(--bg-color);
+    font-family: var(--font);
+    color: var(--font-color);
+    height: 100vh;
+    max-width: 100vw;
+}
+
+.container {
+    padding: 0rem 12rem;
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
+
+/* ------ CHANGE SCROLL BAR -------*/
+body::-webkit-scrollbar {
+    width: 0.6rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: rgb(165, 162, 162);
+}
+body::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:active {
+    background-color: var(--secondary-bg-color);
+}
+body::-webkit-scrollbar-track {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: rgba(104, 103, 103, 0.3);
+}
+
+/* ------- HEADER -------- */
+.navbar {
+    padding: 0 12rem;
+    background-color: var(--bg-color);
+    position: relative;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.header__info ul li {
+    padding: 2.5rem 1.2rem 1rem 1.2rem;
+    cursor: pointer;
+}
