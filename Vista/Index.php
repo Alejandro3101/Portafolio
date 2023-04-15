@@ -11,8 +11,12 @@
     <link rel="stylesheet" href="https://unpkg.com/primeflex@^3/primeflex.css">
     <link rel="stylesheet" href="https://unpkg.com/primeflex/themes/saga-blue.css">
     <script src="https://kit.fontawesome.com/b3f17f1dac.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
+
+
     <!--Header-->
 
     <header class="flex w-full fixed top-0 z-1">
@@ -280,6 +284,8 @@
             </div>
         </div>
     </section>
+
+
     <!--FOOTER -->
     <footer id="contact" class="min-h-full w-full flex grid col-12 justify-content-center pb-8 pt-8 lg:text-center">
         <div class="social__media col-12 md:col-4 flex flex-column justify-content-between">
@@ -308,7 +314,7 @@
                 <i class="fa-solid fa-envelope"></i>
                 <p>alejandro.valderrama@email.com</p>
             </div>
-            <a href="mailTo:avalde5@ibero.edu.co"
+            <a href=Contacto.php
                 class="cursor-pointer text-center col-4 sm:col-6 xl:col-4 mt-3 no-underline border-round-lg">
                 <span>
                     <i class="fa-solid fa-message"></i>
