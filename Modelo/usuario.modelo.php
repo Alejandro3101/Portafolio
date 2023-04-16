@@ -36,7 +36,7 @@ class ModeloUsuario{
 
 
 /*=============================================
-	MOSTRAR CLIENTES
+	MOSTRAR REGISTROS
 	=============================================*/
 
 	static public function mdlMostrarUsuarios($tabla, $item, $valor){
@@ -66,6 +66,41 @@ class ModeloUsuario{
 		$stmt = null;
 
 	    }
+
+
+/*=============================================
+        Editar registros de datos usuarios
+        =============================================*/
+        static public function mdlEditarUsuario($tabla, $datos){
+    
+            $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, cedula = :cedula, telefono = :telefono, pais = :pais, correo = :correo, detalles =:detalles
+            WHERE id = :id");
+        
+    
+            $stmt->bindParam(":id", $datos["id"], PDO::PARAM_INT);
+            $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+            $stmt->bindParam(":cedula", $datos["cedula"], PDO::PARAM_STR);
+            $stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
+            $stmt->bindParam(":pais", $datos["pais"], PDO::PARAM_STR);
+            $stmt->bindParam(":correo", $datos["correo"], PDO::PARAM_STR);
+            $stmt->bindParam(":detalles", $datos["detalles"], PDO::PARAM_STR);
+    
+            if($stmt->execute()){
+    
+                return "ok";
+    
+            }else{
+    
+                return "error";
+            
+            }
+    
+            $stmt->close();
+            $stmt = null;
+    
+        }
+
+
    
     }
 

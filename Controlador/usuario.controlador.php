@@ -55,7 +55,7 @@ class ControladorUsuario{
 
 
 /*=============================================
-	MOSTRAR CLIENTES
+	MOSTRAR REGISTROS
 	=============================================*/
 
 	static public function ctrMostrarUsuarios($item, $valor){
@@ -67,6 +67,64 @@ class ControladorUsuario{
 		return $respuesta;
 
 	}
+
+
+    /*=============================================
+	Guardar datos Usuario
+	=============================================*/
+
+	static public function ctrEditarUsuario(){
+
+        if(isset($_POST["editarCedula"])){
+
+            if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarUsuario"]) &&
+               preg_match('/^[0-9]+$/', $_POST["editarCedula"]) &&                    
+               preg_match('/^[()\-0-9 ]+$/', $_POST["editarTelefono"]) && 
+               preg_match('/^[#\.\-a-zA-Z0-9 ]+$/', $_POST["editarPais"]) && 
+               preg_match('/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/',$_POST["editarEmail"])){
+
+                   $tabla = "datos";
+
+                   $datos = array("id"=>$_POST["idUsuario"],
+                               "nombre"=>$_POST["editarUsuario"],
+                               "cedula"=>$_POST["editarCedula"],
+                               "telefono"=>$_POST["editarTelefono"],
+                               "pais"=>$_POST["editarPais"],
+                               "correo"=>$_POST["editarEmail"],                                   
+                               "detalles"=>$_POST["editarDetalles"]);
+
+                   $respuesta = ModeloUsuario::mdlEditarUsuario($tabla, $datos);
+
+                   if($respuesta == "ok"){
+
+                    echo'<script>
+
+                    alert("Datos Actualizados Exitosamente");
+
+                    </script>';
+                    
+
+                }
+
+            }else{
+                echo'<script>
+
+                alert("Error Actualizando los registros datos , por favor intentar de nuevo.");
+
+                </script>';
+
+
+
+            }
+
+        }
+
+    }
+
+
+
+
+    
 
 
     }
